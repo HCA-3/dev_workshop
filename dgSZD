@@ -1,0 +1,96 @@
+[33mcommit 6adf3c6d23c764497b952cc6d8d063fc952ca65f[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: sigmotoa <si.galvismotoa@gmail.com>
+Date:   Sat Mar 1 07:41:46 2025 -0500
+
+    Strings
+
+[33mcommit cfc9fd4920d2ad3839f20a50ef47d9b7e4d4ad7a[m
+Author: sigmotoa <si.galvismotoa@gmail.com>
+Date:   Sat Mar 1 06:16:30 2025 -0500
+
+    Test de magia
+
+[33mcommit 72672092569f6f56b873d7dae7360b907e22c8ea[m
+Author: sigmotoa <si.galvismotoa@gmail.com>
+Date:   Sat Mar 1 06:16:12 2025 -0500
+
+    Test de magia
+
+[33mcommit c4c3cdfed182ba18021af77d3926902d681027de[m
+Author: sigmotoa <si.galvismotoa@gmail.com>
+Date:   Sat Mar 1 05:45:12 2025 -0500
+
+    entry points for string and magic
+
+[33mcommit 073f61f89bd060b24db87d4523311fd43d77defc[m
+Merge: 7101601 3fb5412
+Author: sigmotoa <si.galvismotoa@gmail.com>
+Date:   Sat Mar 1 05:16:28 2025 -0500
+
+    Merge branch 'main' of github.com:sigmotoa/dev_workshop
+
+[33mcommit 71016012c26f0ba1785b1f5651fe7cc646d487c7[m
+Author: sigmotoa <si.galvismotoa@gmail.com>
+Date:   Sat Mar 1 05:15:02 2025 -0500
+
+    Manejo de data.
+
+[33mcommit 3fb5412d98e5815eb43f1aa54e59ba437756dd7d[m
+Author: Sergio Iván Galvis Motoa <sigalvis@ucatolica.edu.co>
+Date:   Thu Feb 27 08:42:13 2025 -0500
+
+    Update README.md
+
+[33mcommit edb2469ebb73d8c0fe73a02dbe58d1e1b93ad911[m
+Author: Sergio Iván Galvis Motoa <sigalvis@ucatolica.edu.co>
+Date:   Thu Feb 27 08:36:34 2025 -0500
+
+    Create README.md
+
+[33mcommit c6452856949effc4ddee794d00e0c258cee82a7d[m
+Author: Sergio Iván Galvis Motoa <si.galvismotoa@gmail.com>
+Date:   Thu Feb 27 08:23:26 2025 -0500
+
+    Add picture
+
+[33mcommit 1208aa907fbe2588e4c6e1809d7d3e9005c3b711[m
+Author: sigmotoa <si.galvismotoa@gmail.com>
+Date:   Tue Feb 25 05:48:21 2025 -0500
+
+    logic tests
+
+[33mcommit 3a7cf49d1f13a85a3cdfa554ee47e5df4dac3c2b[m
+Author: Sergio Iván Galvis Motoa <sigalvis@ucatolica.edu.co>
+Date:   Tue Feb 25 05:23:57 2025 -0500
+
+    fixing names
+
+[33mcommit 54c9f408fef296b7eb1379d23a1ea813ea82aec4[m
+Author: Sergio Iván Galvis Motoa <sigalvis@ucatolica.edu.co>
+Date:   Tue Feb 25 05:15:31 2025 -0500
+
+    rectanguloArea
+
+[33mcommit c8b6bb6fd1136a566d084ca70d44f6833d3cf79b[m
+Author: sigmotoa <si.galvismotoa@gmail.com>
+Date:   Tue Feb 25 05:12:39 2025 -0500
+
+    Geometric tests
+
+[33mcommit b3d9374029984c39d6be876c559789aba6e0f1f3[m
+Author: sigmotoa <si.galvismotoa@gmail.com>
+Date:   Tue Feb 25 05:03:39 2025 -0500
+
+    entry point
+
+[33mcommit b2d77deab69e72dc5c36ad2325e1f6b1e4056426[m
+Author: sigmotoa <si.galvismotoa@gmail.com>
+Date:   Tue Feb 25 04:57:31 2025 -0500
+
+    actions v1
+
+[33mcommit 5bcf0bce646ffbc0fce4e93e2f5c2447052b3ba5[m
+Author: sigmotoa <si.galvismotoa@gmail.com>
+Date:   Tue Feb 25 04:54:42 2025 -0500
+
+    git configs done
