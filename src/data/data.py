@@ -1,4 +1,11 @@
+import pytest
+from src.data.data import Data 
+
 class Data:
+    """
+    Clase con métodos para operaciones y manipulaciones de estructuras de datos.
+    Incluye implementaciones y algoritmos para arreglos, listas y otras estructuras.
+    """
     def setup_method(self):
         self.data = Data()
     
