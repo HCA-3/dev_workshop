@@ -1,19 +1,9 @@
 class Data:
-    """
-    Clase con métodos para operaciones y manipulaciones de estructuras de datos.
-    Incluye implementaciones y algoritmos para arreglos, listas y otras estructuras.
-    """
+    def setup_method(self):
+        self.data = Data()
     
     def invertir_lista(self, lista):
-        """
-        Invierte el orden de los elementos en una lista sin usar reversed() o lista[::-1].
         
-        Args:
-            lista (list): Lista a invertir
-            
-        Returns:
-            list: Lista con los elementos en orden inverso
-        """
         lista_invertida = []
         for i in range(len(lista) - 1, -1, -1):  # Recorremos la lista de atrás hacia adelante
             lista_invertida.append(lista[i])
