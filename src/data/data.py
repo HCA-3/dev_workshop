@@ -14,11 +14,11 @@ class Data:
         Returns:
             list: Lista con los elementos en orden inverso
         """
-        lista_invertida = []
-        for i in range(len(lista) - 1, -1, -1):  # Recorremos la lista de atrás hacia adelante
-            lista_invertida.append(lista[i])
-        return lista_invertida
-
+        resultado = []
+        for i in range(len(lista) - 1, -1, -1):
+            resultado.append(lista[i])
+        return resultado
+    
     def buscar_elemento(self, lista, elemento):
         """
         Busca un elemento en una lista y devuelve su índice (o -1 si no existe).
@@ -31,9 +31,9 @@ class Data:
         Returns:
             int: Índice del elemento o -1 si no se encuentra
         """
-        for i in range(len(lista)): 
-            if lista[i] == elemento:  
-                return i  
+        for i in range(len(lista)):
+            if lista[i] == elemento:
+                return i
         return -1
     
     def eliminar_duplicados(self, lista):
@@ -47,15 +47,11 @@ class Data:
         Returns:
             list: Lista sin elementos duplicados
         """
-        lista_sin_duplicados = []
-        elementos_vistos = set()
-    
-        for elemento in lista:
-            if elemento not in elementos_vistos:
-                lista_sin_duplicados.append(elemento)
-                elementos_vistos.add(elemento)
-    
-        return lista_sin_duplicados
+        resultado = []
+        for elem in lista:
+            if elem not in resultado:
+                resultado.append(elem)
+        return resultado 
     
     def merge_ordenado(self, lista1, lista2):
         """
@@ -69,9 +65,7 @@ class Data:
             list: Lista combinada y ordenada
         """
         resultado = []
-        i, j = 0, 0  # Índices para recorrer las listas
-
-        # Comparar elementos y agregar el menor a la lista resultado
+        i, j = 0, 0
         while i < len(lista1) and j < len(lista2):
             if lista1[i] < lista2[j]:
                 resultado.append(lista1[i])
@@ -79,8 +73,6 @@ class Data:
             else:
                 resultado.append(lista2[j])
                 j += 1
-
-    # Agregar los elementos restantes (si los hay)
         resultado.extend(lista1[i:])
         resultado.extend(lista2[j:])
         return resultado
@@ -96,17 +88,10 @@ class Data:
         Returns:
             list: Lista rotada
         """
-        if not lista:  # Si la lista está vacía, retornar tal cual
-            return lista
-    
-        n = len(lista)
-        k = k % n  # Para evitar rotaciones innecesarias si k > n
-
-        for _ in range(k):
-            ultimo = lista.pop()  # Sacamos el último elemento
-            lista.insert(0, ultimo)  # Lo insertamos al inicio
-
-        return lista
+        if not lista:
+            return []
+        k %= len(lista)
+        return lista[-k:] + lista[:-k]
     
     def encuentra_numero_faltante(self, lista):
         """
@@ -118,10 +103,10 @@ class Data:
         Returns:
             int: El número que falta en la secuencia
         """
-        n = len(lista) + 1  # Se asume que falta un número en la secuencia completa 1..n
-        suma_esperada = n * (n + 1) // 2  # Fórmula de la suma de los primeros n números naturales
-        suma_real = sum(lista)  # Suma de los números en la lista dada
-        return suma_esperada - suma_real  # El número faltante
+        n = len(lista) + 1
+        suma_total = n * (n + 1) // 2
+        suma_lista = sum(lista)
+        return suma_total - suma_lista
     
     def es_subconjunto(self, conjunto1, conjunto2):
         """
@@ -134,10 +119,10 @@ class Data:
         Returns:
             bool: True si conjunto1 es subconjunto de conjunto2, False en caso contrario
         """
-        for elemento in conjunto1:  # Recorremos cada elemento del posible subconjunto
-         if elemento not in conjunto2:  # Si un elemento no está en el conjunto principal, no es subconjunto
-            return False
-         return True 
+        for elem in conjunto1:
+            if elem not in conjunto2:
+                return False
+        return True
     
     def implementar_pila(self):
         """
@@ -146,28 +131,13 @@ class Data:
         Returns:
             dict: Diccionario con métodos push, pop, peek y is_empty
         """
-    def implementar_pila(self):
         pila = []
-
-        def push(elemento):
-            pila.append(elemento)
-
-        def pop():
-            return pila.pop() if not is_empty() else None
-
-        def peek():
-            return pila[-1] if not is_empty() else None
-
-        def is_empty():
-            return len(pila) == 0
-
         return {
-            "push": push,
-            "pop": pop,
-            "peek": peek,
-            "is_empty": is_empty
+            "push": lambda x: pila.append(x),
+            "pop": lambda: pila.pop() if pila else None,
+            "peek": lambda: pila[-1] if pila else None,
+            "is_empty": lambda: len(pila) == 0
         }
-
     
     def implementar_cola(self):
         """
@@ -176,28 +146,13 @@ class Data:
         Returns:
             dict: Diccionario con métodos enqueue, dequeue, peek y is_empty
         """
-        
         cola = []
-
-        def enqueue(elemento):
-            cola.append(elemento)
-
-        def dequeue():
-            return cola.pop(0) if not is_empty() else None
-
-        def peek():
-            return cola[0] if not is_empty() else None
-
-        def is_empty():
-            return len(cola) == 0
-
         return {
-            "enqueue": enqueue,
-            "dequeue": dequeue,
-            "peek": peek,
-            "is_empty": is_empty
+            "enqueue": lambda x: cola.append(x),
+            "dequeue": lambda: cola.pop(0) if cola else None,
+            "peek": lambda: cola[0] if cola else None,
+            "is_empty": lambda: len(cola) == 0
         }
-
     
     def matriz_transpuesta(self, matriz):
         """
@@ -209,12 +164,8 @@ class Data:
         Returns:
             list: Matriz transpuesta
         """
+        if not matriz:
+            return []
         filas = len(matriz)
-        columnas = len(matriz[0])
-        transpuesta = [[0] * filas for _ in range(columnas)]
-    
-        for i in range(filas):
-            for j in range(columnas):
-                transpuesta[j][i] = matriz[i][j]
-    
-        return transpuesta
+        columnas = len(matriz[0]) if matriz else 0
+        return [[matriz[j][i] for j in range(filas)] for i in range(columnas)]
