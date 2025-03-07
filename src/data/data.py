@@ -45,9 +45,8 @@ class Data:
             lista (list): Lista con posibles duplicados
             
         Returns:
-            list: Lista sin elementos duplicados        
+            list: Lista sin elementos duplicados
         """
-        
         resultado = []
         for elem in lista:
             if elem not in resultado:
