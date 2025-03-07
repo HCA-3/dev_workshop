@@ -164,4 +164,8 @@ class Data:
         Returns:
             list: Matriz transpuesta
         """
-        pass
+        if not matriz:
+            return []
+        filas = len(matriz)
+        columnas = len(matriz[0]) if matriz else 0
+        return [[matriz[j][i] for j in range(filas)] for i in range(columnas)]
