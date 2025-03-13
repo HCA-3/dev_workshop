@@ -48,9 +48,12 @@ class Data:
             list: Lista sin elementos duplicados
         """
         resultado = []
+        seen = set()
         for elem in lista:
-            if elem not in resultado:
-                resultado.append(elem)  # <- Asegúrate de que esta línea está correctamente indentada
+            key = (elem, type(elem))
+            if key not in seen:
+                seen.add(key)
+                resultado.append(elem)
         return resultado
  
     
