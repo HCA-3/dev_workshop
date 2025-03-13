@@ -30,7 +30,7 @@ class Geometria:
         """
         return 2 * (base + altura)
     
-    def area_circulo(self, radio):# pendiente por arreglar
+    def area_circulo(self, radio):
         """
         Calcula el área de un círculo.
         
@@ -52,7 +52,7 @@ class Geometria:
         Returns:
             float: Perímetro del círculo
         """
-        return 2 * math.pi * radio
+        return 2 * 3.1416 * radio
     
     def area_triangulo(self, base, altura):
         """
