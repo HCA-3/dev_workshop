@@ -310,9 +310,9 @@ class Geometria:
             tuple: Coeficientes (A, B, C) de la ecuación de la recta
         """
         A = y2 - y1
-        B = x1 - x2
-        C = A * x1 + B * y1
-        return (A, B, -C)
+        B = -(x2 - x1)
+        C = -(A * x1 + B * y1)
+        return (A, B, C)
     
     def area_poligono_regular(self, num_lados, lado, apotema):
         """
