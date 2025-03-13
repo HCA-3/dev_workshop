@@ -30,7 +30,7 @@ class Geometria:
         """
         return 2 * (base + altura)
     
-    def area_circulo(self, radio):
+    def area_circulo(self, radio):# pendiente por arreglar
         """
         Calcula el área de un círculo.
         
@@ -42,7 +42,7 @@ class Geometria:
         """
         return math.pi * radio ** 2
     
-    def perimetro_circulo(self, radio):
+    def perimetro_circulo(self, radio): # pendiente por arreglar
         """
         Calcula el perímetro (circunferencia) de un círculo.
         
@@ -55,7 +55,7 @@ class Geometria:
         def area_triangulo(self, base, altura):
             return (base * altura) / 2
     
-    def area_triangulo(self, base, altura):# este si para abriba 2 no
+    def area_triangulo(self, base, altura):
         """
         Calcula el área de un triángulo.
         
@@ -80,7 +80,7 @@ class Geometria:
         Returns:
             float: Perímetro del triángulo
         """
-        pass
+        return lado1 + lado2 + lado3
     
     def es_triangulo_valido(self, lado1, lado2, lado3):
         """
