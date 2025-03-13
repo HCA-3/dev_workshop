@@ -1,3 +1,4 @@
+import math
 class Geometria:
     """
     Class with geometric exercises.
@@ -208,7 +209,7 @@ class Geometria:
         Returns:
             float: Volumen de la esfera
         """
-        assert abs(round(self.geometria.volumen_esfera(3), 2) - 113.1) < 0.01
+        return (4/3) * math.pi * (radio ** 3)
     
     def area_superficie_esfera(self, radio):
         """
