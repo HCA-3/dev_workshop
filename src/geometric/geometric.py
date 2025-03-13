@@ -326,7 +326,11 @@ class Geometria:
         Returns:
             float: Área del polígono regular
         """
-        return (num_lados * lado * apotema) / 2
+        if n < 3:
+            raise ValueError("Un polígono debe tener al menos 3 lados")
+        
+        area = (n * l**2) / (4 * math.tan(math.pi / n))
+        return area
     
     def perimetro_poligono_regular(self, num_lados, lado):
         """
