@@ -208,7 +208,7 @@ class Geometria:
         Returns:
             float: Volumen de la esfera
         """
-        return (4/3) * math.pi * (radio ** 3)
+        assert abs(round(self.geometria.volumen_esfera(3), 2) - 113.1) < 0.01
     
     def area_superficie_esfera(self, radio):
         """
