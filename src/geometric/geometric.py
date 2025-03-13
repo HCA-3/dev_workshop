@@ -1,6 +1,4 @@
-import math
-import pytest
-from src.geometric.geometric import Geometria
+import math 
 class Geometria:
     """
     Class with geometric exercises.
@@ -249,7 +247,7 @@ class Geometria:
         Returns:
             float: Área de la superficie del cilindro
         """
-        return round(((x2 - x1) * 2 + (y2 - y1) * 2) ** 0.5, 2)
+        return 2 * math.pi * radio * altura + 2 * math.pi * radio**2
     
     def distancia_entre_puntos(self, x1, y1, x2, y2):
         """
