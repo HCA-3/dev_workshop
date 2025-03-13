@@ -311,7 +311,7 @@ class Geometria:
         """
         A = y2 - y1
         B = -(x2 - x1)
-        C = -(A * x1 + B * y1)
+        C = (x2 * y1) - (x1 * y2)
         return (A, B, C)
     
     def area_poligono_regular(self, num_lados, lado, apotema):
@@ -326,11 +326,7 @@ class Geometria:
         Returns:
             float: Área del polígono regular
         """
-        if n < 3:
-            raise ValueError("Un polígono debe tener al menos 3 lados")
-        
-        area = (n * l**2) / (4 * math.tan(math.pi / n))
-        return area
+        return (lados * longitud_lado * apotema) / 2
     
     def perimetro_poligono_regular(self, num_lados, lado):
         """
