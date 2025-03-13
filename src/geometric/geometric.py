@@ -247,7 +247,7 @@ class Geometria:
         Returns:
             float: Área de la superficie del cilindro
         """
-        return 2 * math.pi * radio * (radio + altura)
+        assert round(self.geometria.area_superficie_cilindro(2.5, 4.2), 2) == 105.24
     
     def distancia_entre_puntos(self, x1, y1, x2, y2):
         """
