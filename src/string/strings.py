@@ -136,7 +136,14 @@ class Strings:
         Returns:
             str: Cadena cifrada
         """
-        pass
+        cifrado = ""
+        for char in texto:
+            if char.isalpha():
+                shift = 65 if char.isupper() else 97
+                cifrado += chr((ord(char) - shift + desplazamiento) % 26 + shift)
+            else:
+                cifrado += char
+        return cifrado
     
     def descifrar_cesar(self, texto, desplazamiento):
         """
