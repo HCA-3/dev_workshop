@@ -274,14 +274,8 @@ class Geometria:
         Returns:
             float: Distancia entre los dos puntos
         """
-        # Corregido el cálculo de distancia
         distancia = math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)
-        
-        # Si la distancia es exactamente un entero, devolvemos el entero
-        if distancia == int(distancia):
-            return int(distancia)
-        else:
-            return round(distancia, 2)
+        return round(distancia, 2)
     
     def punto_medio(self, x1, y1, x2, y2):
         """
@@ -328,19 +322,16 @@ class Geometria:
         Returns:
             tuple: Coeficientes (A, B, C) de la ecuación de la recta
         """
-        # Para rectas horizontales
-        if y1 == y2:
-            return (0, 1, -y1)
-        
-        # Para rectas verticales
         if x1 == x2:
             return (1, 0, -x1)
-        
-        # Caso general
-        A = y1 - y2
-        B = x2 - x1
-        C = (x1 * y2) - (x2 * y1)
-        
+    
+        if y1 == y2:
+            return (0, 1, -y1)
+    
+        A = y2 - y1
+        B = x1 - x2
+        C = (x2 * y1) - (x1 * y2)
+    
         return (A, B, C)
     
     def area_poligono_regular(self, num_lados, lado, apotema):
