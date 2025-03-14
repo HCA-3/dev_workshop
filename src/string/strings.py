@@ -56,7 +56,7 @@ class Strings:
             int: Número de consonantes en la cadena
         """
         consonantes = "bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ"
-        return sum(1 for char in texto if char in consonantes)
+    return sum(1 for char in texto if char in consonantes)
     
     def es_anagrama(self, texto1, texto2):
         """
