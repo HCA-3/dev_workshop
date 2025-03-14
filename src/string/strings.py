@@ -158,7 +158,17 @@ class Strings:
         Returns:
             str: Cadena descifrada
         """
-        return self.cifrar_cesar(texto, -desplazamiento)
+        for caracter in texto:
+            if 'A' <= caracter <= 'Z':  # Mayúsculas
+                nueva_letra = chr((ord(caracter) - ord('A') - desplazamiento) % 26 + ord('A'))
+            elif 'a' <= caracter <= 'z':  # Minúsculas
+                nueva_letra = chr((ord(caracter) - ord('a') - desplazamiento) % 26 + ord('a'))
+            else:
+                nueva_letra = caracter  # Otros caracteres no se modifican
+
+        resultado += nueva_letra
+
+        return resultado
     
     def encontrar_subcadena(self, texto, subcadena):
         """
