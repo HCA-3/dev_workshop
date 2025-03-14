@@ -45,7 +45,7 @@ class Strings:
         vocales = "aeiouAEIOU"
         return sum(1 for char in texto if char in vocales)
     
-    def contar_consonantes(self, texto):
+    def contar_consonantes(self, texto): # pendiente
         """
         Cuenta el número de consonantes en una cadena.
         
@@ -83,7 +83,7 @@ class Strings:
         Returns:
             int: Número de palabras en la cadena
         """
-        pass
+        return len(texto.split())
     
     def palabras_mayus(self, texto):
         """
