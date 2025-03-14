@@ -172,8 +172,10 @@ class Strings:
             list: Lista con las posiciones iniciales de cada ocurrencia
         """
         posiciones = []
-        len_sub = len(subcadena)
-        for i in range(len(texto) - len_sub + 1):
-            if texto[i:i + len_sub] == subcadena:
-                posiciones.append(i)
+        len_texto = len(texto)
+        len_subcadena = len(subcadena)
+
+        for i in range(len_texto - len_subcadena + 1):
+            if texto[i:i + len_subcadena] == subcadena:
+                posiciones.append(i) 
         return posiciones
