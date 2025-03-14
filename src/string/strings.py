@@ -107,7 +107,9 @@ class Strings:
         Returns:
             str: Cadena sin espacios duplicados
         """
-        return ' '.join(texto.split())
+        palabras = texto.split(' ')
+        palabras_sin_duplicados = [palabra for palabra in palabras if palabra != '']
+        return ' '.join(palabras_sin_duplicados)
     
     def es_numero_entero(self, texto):
         """
