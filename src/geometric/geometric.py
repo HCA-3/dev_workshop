@@ -253,13 +253,9 @@ class Geometria:
         Returns:
             float: Área de la superficie del cilindro
         """
-        # Área de las bases (círculos)
-        area_bases = 2 * math.pi * radio ** 2
-        
-        # Área lateral (rectángulo enrollado)
-        area_lateral = 2 * math.pi * radio * altura
-        
-        return area_bases + area_lateral
+        if radio <= 0 or altura <= 0:
+            raise ValueError("El radio y la altura deben ser positivos.")
+        return 2 * math.pi * radio * (radio + altura)
     
     def distancia_entre_puntos(self, x1, y1, x2, y2):
         """
