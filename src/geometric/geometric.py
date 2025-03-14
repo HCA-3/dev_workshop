@@ -1,5 +1,4 @@
-import pytest
-import math 
+import math
 
 class Geometria:
     """
@@ -18,7 +17,7 @@ class Geometria:
         Returns:
             float: Área del rectángulo
         """
-        return base*altura
+        return base * altura
     
     def perimetro_rectangulo(self, base, altura):
         """
@@ -45,7 +44,7 @@ class Geometria:
         """
         return math.pi * radio ** 2
     
-    def perimetro_circulo(self, radio): # pendiente por arreglar
+    def perimetro_circulo(self, radio):
         """
         Calcula el perímetro (circunferencia) de un círculo.
         
@@ -98,6 +97,11 @@ class Geometria:
         Returns:
             bool: True si los lados pueden formar un triángulo, False en caso contrario
         """
+        # Todos los lados deben ser positivos
+        if lado1 <= 0 or lado2 <= 0 or lado3 <= 0:
+            return False
+            
+        # La suma de dos lados debe ser mayor que el tercer lado
         return (lado1 + lado2 > lado3 and lado1 + lado3 > lado2 and lado2 + lado3 > lado1)
     
     def area_trapecio(self, base_mayor, base_menor, altura):
@@ -249,7 +253,13 @@ class Geometria:
         Returns:
             float: Área de la superficie del cilindro
         """
-        return round((2 * math.pi * radio * altura) + (2 * math.pi * radio ** 2), 2)
+        # Área de las bases (círculos)
+        area_bases = 2 * math.pi * radio ** 2
+        
+        # Área lateral (rectángulo enrollado)
+        area_lateral = 2 * math.pi * radio * altura
+        
+        return area_bases + area_lateral
     
     def distancia_entre_puntos(self, x1, y1, x2, y2):
         """
@@ -264,7 +274,14 @@ class Geometria:
         Returns:
             float: Distancia entre los dos puntos
         """
-        return round(((x2 - x1) * 2 + (y2 - y1) * 2) ** 0.5, 2)
+        # Corregido el cálculo de distancia
+        distancia = math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)
+        
+        # Si la distancia es exactamente un entero, devolvemos el entero
+        if distancia == int(distancia):
+            return int(distancia)
+        else:
+            return round(distancia, 2)
     
     def punto_medio(self, x1, y1, x2, y2):
         """
@@ -311,10 +328,20 @@ class Geometria:
         Returns:
             tuple: Coeficientes (A, B, C) de la ecuación de la recta
         """
+        # Para rectas horizontales
+        if y1 == y2:
+            return (0, 1, -y1)
+        
+        # Para rectas verticales
+        if x1 == x2:
+            return (1, 0, -x1)
+        
+        # Caso general
         A = y1 - y2
         B = x2 - x1
         C = (x1 * y2) - (x2 * y1)
-        return A, B, C
+        
+        return (A, B, C)
     
     def area_poligono_regular(self, num_lados, lado, apotema):
         """
@@ -328,7 +355,7 @@ class Geometria:
         Returns:
             float: Área del polígono regular
         """
-        return ((num_lados*lado)*apotema)/2
+        return (num_lados * lado * apotema) / 2
     
     def perimetro_poligono_regular(self, num_lados, lado):
         """
