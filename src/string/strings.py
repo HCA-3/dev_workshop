@@ -1,3 +1,4 @@
+import re
 class Strings:
     """
     Clase con métodos para manipulación y operaciones con cadenas de texto.
