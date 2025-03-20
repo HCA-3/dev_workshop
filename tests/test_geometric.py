@@ -153,8 +153,8 @@ class TestGeometria:
     def test_area_superficie_cilindro(self):
         # Test con valores enteros
         assert round(self.geometria.area_superficie_cilindro(3, 5), 2) == 150.8
-        # Test con valores decimales
-        assert round(self.geometria.area_superficie_cilindro(2.5, 4.2), 2) == 105.5
+        # Test con valores decimales (corregido)
+        assert round(self.geometria.area_superficie_cilindro(2.5, 4.2), 2) == 105.24
         # Test con altura cero (sólo áreas de las bases)
         assert round(self.geometria.area_superficie_cilindro(3, 0), 2) == 56.55
     
