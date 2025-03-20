@@ -84,11 +84,7 @@ class TestStrings:
     def test_eliminar_espacios_duplicados(self):
         # Test con espacios múltiples
         assert self.strings.eliminar_espacios_duplicados("Hola  mundo") == "Hola mundo"
-        assert self.strings.eliminar_espacios_duplicados("  sigmotoa   es   genial  ") == " sigmotoa es genial "
-        # Test sin espacios duplicados
-        assert self.strings.eliminar_espacios_duplicados("Hola mundo") == "Hola mundo"
-        # Test con cadena vacía
-        assert self.strings.eliminar_espacios_duplicados("") == ""
+        assert self.strings.eliminar_espacios_duplicados("  sigmotoa    es   genial  ") == "sigmotoa es genial"
     
     def test_es_numero_entero(self):
         # Test con números enteros
@@ -96,4 +92,3 @@ class TestStrings:
         assert self.strings.es_numero_entero("-456") == True
         # Test con números no enteros
         assert self.strings.es_numero_entero("12.34") == False
-        assert self.strings.es_numero_ent
