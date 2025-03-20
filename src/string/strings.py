@@ -158,17 +158,15 @@ class Strings:
         Returns:
             str: Cadena descifrada
         """
-        resultado = ""  # Se inicializa la cadena donde se almacenará el resultado
-
+        resultado = ""
         for caracter in texto:
-            if 'A' <= caracter <= 'Z':  # Mayúsculas
-                nueva_letra = chr((ord(caracter) - ord('A') - desplazamiento) % 26 + ord('A'))
-            elif 'a' <= caracter <= 'z':  # Minúsculas
-                nueva_letra = chr((ord(caracter) - ord('a') - desplazamiento) % 26 + ord('a'))
+            if caracter.isalpha():  # Solo descifrar letras
+                shift = 65 if caracter.isupper() else 97
+                nueva_letra = chr((ord(caracter) - shift - desplazamiento) % 26 + shift)
             else:
-                nueva_letra = caracter  # Otros caracteres no se modifican
+             nueva_letra = caracter  # Otros caracteres quedan iguales
 
-            resultado += nueva_letra  # Se almacena el resultado
+            resultado += nueva_letra  # Agregamos la nueva letra al resultado
 
         return resultado
     
