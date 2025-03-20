@@ -96,7 +96,7 @@ class Strings:
         Returns:
             str: Cadena con la primera letra de cada palabra en mayúscula
         """
-        return ' '.join(word.capitalize() for word in texto.split(' '))
+        assert self.strings.es_numero_entero("12.34") == False
     
     def eliminar_espacios_duplicados(self, texto):
         """
