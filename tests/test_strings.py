@@ -82,13 +82,12 @@ class TestStrings:
         assert self.strings.palabras_mayus("") == ""
     
     def test_eliminar_espacios_duplicados(self):
-        # Test con espacios múltiples
-        assert self.strings.eliminar_espacios_duplicados("Hola  mundo") == "Hola mundo"
-        assert self.strings.eliminar_espacios_duplicados("  sigmotoa   es   genial  ") == " sigmotoa es genial "
-        # Test sin espacios duplicados
-        assert self.strings.eliminar_espacios_duplicados("Hola mundo") == "Hola mundo"
-        # Test con cadena vacía
-        assert self.strings.eliminar_espacios_duplicados("") == ""
+        dentro_texto = ' '.join(texto.split())  # Elimina espacios extra entre palabras
+        if texto.startswith(" "):
+            dentro_texto = " " + dentro_texto  # Mantiene espacio inicial si existía
+        if texto.endswith(" "):
+            dentro_texto += " "  # Mantiene espacio final si existía
+        return dentro_texto
     
     def test_es_numero_entero(self):
         # Test con números enteros
