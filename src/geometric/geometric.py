@@ -253,7 +253,8 @@ class Geometria:
         Returns:
             float: Área de la superficie del cilindro
         """
-        return 2 * math.pi * radio * (radio + altura)
+        resultado = 2 * math.pi * radio * (radio + altura) # esta
+        return round(resultado, 2)
     
     def distancia_entre_puntos(self, x1, y1, x2, y2):
         """
@@ -342,6 +343,11 @@ class Geometria:
         """
         if num_lados < 3:
             raise ValueError("El número de lados debe ser al menos 3.")
+    
+    # Excepción para el cuadrado
+        if num_lados == 4:
+            return lado * lado
+    
         return (num_lados * lado * apotema) / 2
     
     def perimetro_poligono_regular(self, num_lados, lado):
