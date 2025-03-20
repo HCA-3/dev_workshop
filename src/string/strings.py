@@ -120,11 +120,7 @@ class Strings:
         Returns:
             bool: True si la cadena representa un número entero, False en caso contrario
         """
-        try:
-            int(texto)
-            return True
-        except ValueError:
-            return False
+        return texto.isdigit() or (texto.startswith('-') and texto[1:].isdigit())
     
     def cifrar_cesar(self, texto, desplazamiento):
         """
