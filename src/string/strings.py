@@ -158,6 +158,8 @@ class Strings:
         Returns:
             str: Cadena descifrada
         """
+        resultado = ""  # Se inicializa la cadena donde se almacenará el resultado
+
         for caracter in texto:
             if 'A' <= caracter <= 'Z':  # Mayúsculas
                 nueva_letra = chr((ord(caracter) - ord('A') - desplazamiento) % 26 + ord('A'))
@@ -166,7 +168,7 @@ class Strings:
             else:
                 nueva_letra = caracter  # Otros caracteres no se modifican
 
-        resultado += nueva_letra
+            resultado += nueva_letra  # Se almacena el resultado
 
         return resultado
     
